@@ -32,14 +32,16 @@ export default {
   </header>
 
   <main>
+    <div class="containerContent">
+      <ListCard />
 
-    <ListCard />
-
-
-
-
-
+    </div>
   </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.containerContent {
+  width: 100%;
+  background-color: rgb(205, 138, 54);
+}
+</style>
