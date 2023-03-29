@@ -21,5 +21,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    h1 {
+        color: black;
+    }
 }
 </style>

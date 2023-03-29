@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import store from './store'
+import { store } from './store.js'
 import AppHeader from './components/AppHeader.vue';
 import ListCard from './components/ListCard.vue'
 
@@ -12,13 +12,14 @@ export default {
   },
   data() {
     return {
-      store
+      store,
     }
   },
-  mounted() {
+  created() {
     axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
       .then(response => {
-        this.store.cardList = response.data;
+        console.log(response.data.data);
+        this.store.cardList = response.data.data;
       })
 
   }
@@ -33,6 +34,7 @@ export default {
   <main>
 
     <ListCard />
+
 
 
 
