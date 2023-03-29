@@ -38,7 +38,9 @@ export default {
 
 <template>
   <header>
-    <AppHeader titolo="Yu-Gi-Oh"></AppHeader>
+    <AppHeader titolo="Yu-Gi-Oh">
+
+    </AppHeader>
   </header>
 
   <main>

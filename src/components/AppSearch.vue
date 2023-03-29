@@ -1,10 +1,12 @@
-<script></script>
+<script>
+
+</script>
 
 <template>
     <div class="container_select">
         <select name="" id="type_select">
             <option value=""> Seleziona un tipo</option>
-            <option value="">alien</option>
+            <option value="">Blue-Eyes</option>
 
 
         </select>
@@ -21,7 +23,7 @@
 }
 
 .container_select {
-    width: 1300px;
+    max-width: 1300px;
     margin: auto;
     padding: 10px;
 }
