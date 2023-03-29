@@ -31,6 +31,7 @@ export default {
     justify-content: center;
     width: 1300px;
     margin: auto;
-    background-color: black;
+    background-color: white;
+    ;
 }
 </style>

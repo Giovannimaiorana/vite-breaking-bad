@@ -29,10 +29,18 @@ export default {
 
     img {
         width: 100%;
+
     }
 
     h3 {
         color: white;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+    }
+
+    h5 {
+        margin-bottom: 10px;
     }
 }
 </style>
