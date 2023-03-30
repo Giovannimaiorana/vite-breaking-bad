@@ -6,6 +6,7 @@ import ListCard from './components/ListCard.vue'
 import AppSearch from './components/AppSearch.vue'
 import LoadingApp from './components/LoadingApp.vue'
 
+
 export default {
   components: {
     AppHeader,
@@ -27,11 +28,19 @@ export default {
           this.store.cardList = response.data.data;
           this.store.loading = false;
         })
-    }
+    },
+    GetCardArchetype() {
+      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then(response => {
+          this.store.CardArchetype = response.data;
+          console.log(this.store.CardArchetype);
+        })
+    },
   },
   created() {
 
     this.getCards();
+    this.GetCardArchetype()
   }
 }
 </script>

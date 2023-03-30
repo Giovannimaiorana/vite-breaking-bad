@@ -1,12 +1,22 @@
 <script>
-
+import { store } from '../store.js';
+export default {
+    name: AppSearch,
+    data() {
+        return {
+            store
+        }
+    }
+}
 </script>
 
 <template>
     <div class="container_select">
-        <select name="" id="type_select">
-            <option value=""> Seleziona un tipo</option>
-            <option value="">Blue-Eyes</option>
+        <select id="type_select">
+            <option v-for="(name, i) in store.CardArchetype" :key="i" :value="name.archetype_name">
+                {{ name.archetype_name }}
+            </option>
+
 
 
         </select>
