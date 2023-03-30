@@ -5,6 +5,7 @@ import AppHeader from './components/AppHeader.vue';
 import ListCard from './components/ListCard.vue'
 import AppSearch from './components/AppSearch.vue'
 import LoadingApp from './components/LoadingApp.vue'
+import CounterApp from './components/CounterApp.vue'
 
 
 export default {
@@ -13,6 +14,7 @@ export default {
     ListCard,
     AppSearch,
     LoadingApp,
+    CounterApp,
 
   },
   data() {
@@ -66,12 +68,15 @@ export default {
   </header>
 
   <main>
+
     <div class="containerContent">
       <AppSearch @change="SelectArchetype()" />
-      <ListCard />
 
     </div>
   </main>
+  <CounterApp />
+  <ListCard />
+
   <LoadingApp />
 </template>
 
