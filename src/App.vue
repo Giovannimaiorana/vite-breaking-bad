@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     getCards() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
         .then(response => {
           console.log(response.data.data);
           this.store.cardList = response.data.data;
@@ -36,6 +36,19 @@ export default {
           console.log(this.store.CardArchetype);
         })
     },
+    SelectArchetype() {
+      if (store.selected == '') {
+        this.getCards();
+      } else {
+        let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+        urlApi += `?archetype=${this.store.selected}`;
+
+        axios.get(urlApi)
+          .then(response => {
+            this.store.cardList = response.data.data;
+          })
+      }
+    }
   },
   created() {
 
@@ -54,7 +67,7 @@ export default {
 
   <main>
     <div class="containerContent">
-      <AppSearch />
+      <AppSearch @change="SelectArchetype()" />
       <ListCard />
 
     </div>
@@ -72,5 +85,6 @@ export default {
 .containerContent {
   width: 100%;
   background-color: rgb(205, 138, 54);
+  margin-bottom: 20px;
 }
 </style>

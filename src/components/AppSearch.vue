@@ -12,7 +12,8 @@ export default {
 
 <template>
     <div class="container_select">
-        <select id="type_select">
+        <select id="type_select" v-model="store.selected" @change="$emit('change')">
+            <option selected value="">all</option>
             <option v-for="(name, i) in store.CardArchetype" :key="i" :value="name.archetype_name">
                 {{ name.archetype_name }}
             </option>
