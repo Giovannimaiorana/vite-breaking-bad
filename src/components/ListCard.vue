@@ -17,7 +17,7 @@ export default {
 <template>
     <div class="containerCard">
         <div v-for="(card, index) in store.cardList">
-            <CardElement :nome="card.name" :tipo="card.archetype" :immagine="card.card_images[0].image_url" />
+            <CardElement class="card" :nome="card.name" :tipo="card.archetype" :immagine="card.card_images[0].image_url" />
         </div>
 
     </div>
@@ -28,10 +28,15 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 1300px;
     margin: auto;
     background-color: white;
     ;
+
+    .card {
+        width: 150px;
+        height: 350px;
+    }
 }
 </style>

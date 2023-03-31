@@ -26,5 +26,6 @@ export default {
 .counter {
     display: flex;
     justify-content: center;
+
 }
 </style>
